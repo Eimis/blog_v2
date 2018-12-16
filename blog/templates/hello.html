@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{# top navbar shouldn't be present in landing page #}
+{% block top_navbar %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row-fluid content-wrapper">
+        <div class="slogan-box">
+            <div class="slogan-wrapper">
+                <h1>HELLO THERE</h1>
+                {% comment %}
+                <p>My name is <span class="bolded">Eimantas</span>. I love mountains, forests and creating beautiful things</p>
+                {% endcomment %}
+                <p>My name is <span class="bolded">Eimantas</span>.</p>
+                <p>I travel, play bass and write code (I'm a freelance software engineer).</p>
+            </div>
+        </div>
+        <div class="main-box">
+            <i class="fa fa-chevron-circle-down fa-3x begin-arrow"></i>
+            <!--WHO-->
+            <h1>WHO AM I</h1>
+            <img src="{% static 'images/me2.jpg' %}" class="img-circle"></img>
+            <div class="text-wrapper">
+                <p>I am a {{ age }} years old guy from <a href="https://en.wikipedia.org/wiki/Vilnius" target="_blank">Vilnius</a>, capital of <a href="https://en.wikipedia.org/wiki/Lithuania" target="_blank">Lithuania</a>. I love traveling to unknown, mysterious and inspiring places around the world, especially mountains. I am also particularly interested in music (I'm a bass player), especially in the <a href="https://en.wikipedia.org/wiki/Jam_session" target="_blank">creation process itself</a>.</p>
+                {% comment %}
+                <p>I also happen to be a full-stack <a href="https://www.djangoproject.com/" target="_blank">Django</a> / <a href="https://angularjs.org/" target="_blank">Angular</a> / <a href="https://facebook.github.io/react/" target="_blank">React</a> developer (thats how I earn for a living).</p>
+                {% endcomment %}
+                <p>I also happen to be a full-stack, freelance <a href="https://www.djangoproject.com/" target="_blank">Django</a> developer (thats how I earn for a living).</p>
+            </div>
+            <!--WHAT-->
+            <h1>WHAT I DO</h1>
+            <img src="{% static 'images/falcon-9.jpg' %}" class="img-circle"></img>
+            <div class="text-wrapper">
+                <div class="what" border=1>
+                    <div>
+                    <a href="{% url 'code' %}">
+                        <i class="fa fa-rocket fa-5x"></i>
+                        <p>CODE</p>
+                    </a>
+                    </div>
+                    <div>
+                    <a href="{% url 'thoughts' %}">
+                        <i class="fa fa-lightbulb-o fa-5x"></i>
+                        <p>THOUGHTS</p>
+                    </a>
+                    </div>
+                    <div>
+                    <a href="{% url 'sounds' %}">
+                        <i class="fa fa-certificate fa-5x"></i>
+                        <p>SOUNDS</p>
+                    </a>
+                    </div>
+                    <div>
+                    <a href="{% url 'pics' %}">
+                        <i class="fa fa-camera-retro fa-5x"></i>
+                        <p>PICS</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <!--HELLO-->
+            <h1>SAY HELLO</h1>
+            <div class="text-wrapper form-wrapper">
+             <form class="hello" action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                    <div class="form-group">
+                        <span class="form-errors name"></span>
+                        <input type="text" name="{{ email_form.name.html_name }}" class="form-control" id="name" placeholder="John Doe" onfocus="this.placeholder = ''" onblur="this.placeholder = 'John Doe'">
+                        <span class="form-errors sender"></span>
+                        <input type="email" name="{{ email_form.sender.html_name }}" class="form-control" id="email" placeholder="you@awesome_email.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'you@awesome_email.com'">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-errors message"></span>
+                        <textarea name="{{ email_form.message.html_name }}" class="form-control message" placeholder="Your message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your message'"></textarea>
+                    </div>
+                    <button class="btn btn-default contact-button" type="submit">
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            <!--SOCIAL-->
+            <div class="icon-wrapper">
+                <div class="social">
+                    <a href="https://lt.linkedin.com/in/eimantas-stonys-21477149" target="_ blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    <a href="https://github.com/Eimis" target="_ blank"><i class="fa fa-github-square fa-2x"></i></a>
+                    <a href="https://twitter.com/eimsto" target="_ blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    {% if static_file.resume %}
+                    <p>My resume in English:</p>
+                    <a href="static_file.resume.url"><i class="fa fa-file-pdf-o fa-2x"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{# social incons are hardcoded in this page #}
+{% block social_icons %}
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+$(document).ready(function() {
+{% if static_file.landing_image %}
+    $('body').css({
+        'background': 'url({{ static_file.landing_image.url }}) no-repeat center center fixed',
+        '-webkit-background-size': 'cover',
+        '-moz-background-size': 'cover',
+        '-o-background-size': 'cover',
+        'background-size': 'cover',
+        'height': '100%',
+    })
+{% endif %}
+});
+</script>
+
+{% endblock %}
+
+
+<!--PLACES picture where will post myself working in amazing places and adding a comment (wifi, sound). All over the world! Explainers ?-->

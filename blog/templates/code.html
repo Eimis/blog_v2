@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load trans from i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row-fluid content-wrapper">
+        <div class="top-img">
+            {% if static_file.code_image %}
+            <img src="{{ static_file.code_image.url }}"></img>
+            {% endif %}
+        </div>
+        <div class="blog-posts code-posts">
+           <div>
+             <!-- Nav tabs -->
+             <ul class="nav nav-tabs" role="tablist">
+               <li role="presentation" class="active">
+               <a href="#code_thoughts" aria-controls="code_thoughts" role="tab" data-toggle="tab"><i class="fa fa-comment-o fa-2x"></i></a>
+               </li>
+               <li role="presentation">
+               <a href="#projects" aria-controls="projects" role="tab" data-toggle="tab"><i class="fa fa-briefcase fa-2x"></i></a>
+              </li>
+             </ul>
+
+             <!-- Tab panes -->
+             <div class="tab-content">
+               <div role="tabpanel" class="tab-pane fade active in" id="code_thoughts">
+                 <div class="tab-content">
+                   <p>No open-source cotributions here yet</p>
+                   {% comment %}
+                   <div class="github-card" data-user="Eimis"></div>
+                   {% endcomment %}
+                 </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="projects">
+                 <div class="tab-content">
+                   <p>Projects that I have worked on can be found in <a href="https://lt.linkedin.com/in/eimantas-stonys-21477149" target="_blank">my LinkedIn profile</a></p>
+                   {% comment %}
+                   <script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/eimantas-stonys/49/771/214" data-format="inline" data-related="false"></script>
+                   {% endcomment %}
+                   <p><a href="https://drive.google.com/file/d/0B5_YO9gyW4IxeC1wVWhqNmxtdTA/view?usp=sharing" target="_blank">My resume in English</a></p>
+                 </div>
+               </div>
+              </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

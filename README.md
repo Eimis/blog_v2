@@ -1,0 +1,1 @@
+My renewed blog

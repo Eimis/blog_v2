@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load trans from i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row-fluid content-wrapper">
+        <div class="top-img">
+            {% if static_file.thoughts_image %}
+            <img src="{{ static_file.thoughts_image.url }}"></img>
+            {% endif %}
+        </div>
+        <div class="blog-posts">
+          {% for thought in thoughts %}
+            <p>
+            <a href="{% url 'thought' thought.slug %}">{{ thought.title }}<span class="post-date">{{ thought.date|date }}</span></a>
+            </p>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load trans from i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row-fluid content-wrapper">
+      <div class="top-img post-img" {% if code_thought.picture %}style="background-image: url({% static code_thought.picture.url %}); background-size: cover;"{% endif %}>
+            <h1>{{ code_thought.title }}</h1>
+        </div>
+        <div class="blog-posts post-content">
+          {{ code_thought.content|linebreaks }}
+        </div>
+        <div class="footer">
+          <hr>
+          <div class="social">
+            <a href=""><i class="fa fa-linkedin-square fa-2x"></i></a>
+            <a href=""><i class="fa fa-github-square fa-2x"></i></a>
+            <a href=""><i class="fa fa-twitter-square fa-2x"></i></a>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('body').css('background', 'white');
+    });
+</script>
+
+{% endblock %}

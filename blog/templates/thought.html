@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load trans from i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row-fluid content-wrapper">
+      <div class="top-img post-img" {% if thought.picture %}style="background-image: url({{ thought.picture.url }}); background-size: cover;"{% endif %}>
+            <h1>{{ thought.title }}</h1>
+        </div>
+        <div class="blog-posts post-content">
+          {{ thought.content|linebreaks }}
+        </div>
+        {# was unable to properly style footer so social icons are harcoded here #}
+        <div class="footer">
+          <hr>
+          <div class="social">
+              <a href="https://lt.linkedin.com/in/eimantas-stonys-21477149" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+              <a href="https://github.com/Eimis" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+              <a href="https://twitter.com/eimsto" target="_ blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{# was unable to properly style footer so social icons are harcoded here #}
+{% block social_icons %}
+{% endblock %}

@@ -1,0 +1,445 @@
+/*The site is mobile oriented, so these are general rules:*/
+
+/*Portrait phones and smaller */
+/*@media (max-width: 480px) {*/
+    /*. . .*/
+/*}*/
+
+body {
+    background: white;
+}
+
+div.content-wrapper {
+    height: 100vh;
+}
+
+div.slogan-box {
+    background: rgba( 0, 0, 0, 0.55 );
+    position: relative;
+    height: 65%;
+    text-align: center;
+}
+div.slogan-box h1{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    /*color: #445566;*/
+    /*color: #ccbbaa;*/
+    color: #86A5BA;
+}
+div.slogan-box p{
+    /*color: #3E454B;*/
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+span.bolded {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+div.slogan-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+div.slogan-wrapper hr{
+    width: 40%;
+}
+
+div.main-box {
+    background: rgba( 255, 255, 255, 0.95 );
+    margin-top: 40%;
+    height: auto;
+    text-align: center;
+}
+div.main-box p{
+    padding: 10px;
+}
+div.main-box hr:first-of-type{
+    border-top: 1px solid #86A5BA;
+}
+div.main-box hr{
+    border-top: 1px solid #86A5BA;
+    width: 40%;
+}
+
+div.main-box h1:first-of-type{
+    margin-top: 30%;
+}
+div.main-box h1{
+    margin-top: 30%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #86A5BA;
+}
+div.main-box img{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+button.who-button {
+    margin-top: 20px;
+    background-color: #779955;
+    width: 200px;
+    padding: 10px;
+}
+button.who-button:hover {
+    cursor:default !important;
+    background-color: #779955;
+}
+button.who-button i{
+    color: white;
+    padding: 10px;
+}
+
+i.begin-arrow {
+    margin-top: 20px;
+    padding: 10px;
+    color: #e3e0cf;
+}
+
+div.text-wrapper {
+    width: 80%;
+    overflow: auto;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+div.icon-wrapper:last-of-type{
+    padding-bottom: 10%;
+}
+div.text-wrapper p, div.icon-wrapper p{
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #666666;
+    /*nice color:*/
+    /*color: #9fa8a3;*/
+}
+div.text-wrapper a, a:visited, a:active a:hover{
+    color: #86A5BA;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+div.what {
+    width: 100%;
+}
+div.what div {
+    width: 50%;
+    float: left;
+}
+div.what div i{
+    color: #ccc;
+    padding: 10px;
+}
+div.what div a{
+    border-bottom: none;
+}
+div.what div p{
+    color: #ccc;
+}
+div.what div:nth-child(1) {
+    border-right: 1px solid rgba(134, 165, 186, 0.2);
+    border-bottom: 1px solid rgba(134, 165, 186, 0.2);
+}
+div.what div:nth-child(2) {
+    border-bottom: 1px solid rgba(134, 165, 186, 0.2);
+}
+div.what div:nth-child(3) {
+    border-right: 1px solid rgba(134, 165, 186, 0.2);
+}
+
+form.hello input, textarea.message {
+    background-color: rgba( 255, 255, 255, 0 );
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow:none;
+    margin-top: 10px;
+}
+form.hello textarea.message{
+    height: 150px;
+}
+
+form.hello input:focus, textarea.message:focus {
+    background-color: rgba( 255, 255, 255, 0 );
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+}
+form.hello i, form.hello button {
+    color: white;
+}
+form.hello button:hover {
+    color: white;
+}
+form.hello span.form-errors {
+    display: inline-block;
+    color: #C5A2A2;
+    margin-top: 10px;
+}
+
+button.contact-button {
+    margin-top: 20px;
+    background-color: #e3e0cf;
+    /*nice color:*/
+    /*background-color: #c5d5cb;*/
+
+
+    width: 200px;
+    padding: 10px;
+    border: none;
+}
+button.contact-button:hover {
+    background-color: #e3e0cf;
+}
+button.contact-button p{
+    color: white;
+    padding: 0;
+}
+
+div.social {
+    margin-top: 30px;
+    text-align: center;;
+}
+div.social i{
+    padding: 10px;
+    color: #d6d6d6;
+}
+div.top-img {
+    width: 100%;
+    margin: 0 auto;
+}
+div.top-img img {
+    width: 100%;
+}
+div.post-img {
+    width: 100%;
+    height: 85%;
+    position: relative;
+}
+div.post-img h1{
+    position: absolute;
+    display: inline-block;
+    color: white;
+    bottom: 0;
+    padding: 10px 10px 10px 20px;
+}
+
+nav.top-header {
+    background-color: white;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+div.navbar-collapse {
+    border: none;
+}
+div.link-wrapper {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+nav.top-header a, nav.top-header i {
+    color: #e3e3e3;
+}
+nav.top-header a, nav.top-header i.landing {
+    color: #86A5BA;
+}
+nav.top-header a:hover {
+    background-color: white;
+}
+nav.top-header a:focus {
+    background-color: transparent;
+}
+
+div.blog-posts,
+div.sounds,
+div.pics {
+    margin: 0 auto;
+    margin-top: 4%;
+    text-align: left;
+    width: 100%;
+}
+
+div.blog-posts, div.sounds p{
+    padding-bottom: 20px;
+}
+div.pics p {
+    margin-bottom: 20px;
+}
+div.blog-posts a, div.sounds p, div.pics a{
+    font-size: 25px;
+    color: #90C0D8;
+}
+div.pics a,
+div.pics a:visited,
+div.pics a:active,
+div.pics a:hover {
+    text-decoration:none;
+}
+div.blog-posts a,
+div.blog-posts a:visited,
+div.blog-posts a:active,
+div.blog-posts a:hover {
+    text-decoration:none;
+}
+div.blog-posts span.post-date{
+    color: #c6c6c6;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 300;
+}
+div.post-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 45px;
+    color: #7D8B97;
+    font-weight: 300;
+}
+div.post-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 45px;
+    color: #7D8B97;
+    font-weight: 300;
+}
+div.post-content p:first-of-type:first-letter {
+    font-size: 715%;
+    color: #3E454B;
+    font-weight: bold;
+    padding-right: 7px;
+    margin-left: -5px;
+    float: left;
+    line-height: 130px;
+}
+
+div.footer {
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+div.footer hr{
+    border-top: 1px solid #e3e3e3;
+}
+
+/*tabs and icons at 'code' page:*/
+div.tab-content {
+    margin-top: 3%;
+}
+div.code-posts ul {
+    border: transparent;
+}
+div.code-posts li a {
+    padding-left: 0;
+    padding-right: 20px;
+}
+div.code-posts li a:hover {
+    background-color: white;
+    border: 1px solid transparent;
+}
+div.code-posts li.active a:hover {
+    background-color: white;
+    border: 1px solid transparent;
+}
+div.code-posts li.active a,
+div.code-posts li.active a:focus {
+    color: #86A5BA;
+    border: 1px solid transparent;
+}
+div.code-posts li.active a i{
+    /*border-bottom: 1px solid #cccccc;*/
+    padding-bottom: 10px;
+}
+div.tab-content p {
+    font-size: 25px;
+    color: #90C0D8;
+    /*stupid LinkedIn irame wisget bug:*/
+    /*margin-left: 3px;*/
+}
+
+/*Other devices:*/
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    div.slogan-box {
+        width: 75%;
+        margin: 0 auto;
+    }
+    div.main-box {
+        width: 75%;
+        margin: 15% auto 0 auto;
+    }
+    div.top-img {
+        width: 70%;
+    }
+    div.blog-posts, div.sounds, div.pics {
+        width: 60%;
+    }
+    div.post-img {
+        width: 100%;
+        height: 75%;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    div.slogan-box {
+        width: 65%;
+        margin: 0 auto;
+    }
+    div.main-box {
+        width: 65%;
+        margin: 15% auto 0 auto;
+    }
+    div.top-img {
+        width: 70%;
+    }
+    div.blog-posts, div.sounds, div.pics {
+        width: 60%;
+    }
+    div.post-img {
+        width: 70%;
+        height: 75%;
+    }
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    div.slogan-box {
+        width: 45%;
+        height: 60%;
+        margin: 0 auto;
+    }
+    div.main-box {
+        width: 45%;
+        margin: 15% auto 0 auto;
+    }
+    div.top-img {
+        width: 70%;
+    }
+    div.blog-posts, div.sounds, div.pics {
+        width: 70%;
+    }
+    div.post-content {
+        width: 60%;
+    }
+    div.footer {
+        width: 40%;
+    }
+    div.post-img {
+        width: 70%;
+        height: 75%;
+    }
+}

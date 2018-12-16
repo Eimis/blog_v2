@@ -1,0 +1,7 @@
+imgs/
+db.sqlite3
+*.swp
+*.pyc
+env/
+media/
+staticfiles/

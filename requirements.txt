@@ -1,0 +1,19 @@
+boto==2.38.0
+dj-database-url==0.3.0
+dj-static==0.0.6
+Django==1.8.3
+-e git://github.com/Eimis/django-boto.git@f258cc051de3f73c47ef97771bc1ec81ab32e2b5#egg=django_boto-master
+django-cors-headers==1.1.0
+django-debug-toolbar==1.3.2
+django-extensions==1.5.6
+-e git://github.com/marcopompili/django-instagram.git#egg=django-instagram
+django-taggit==0.17.1
+django-toolbelt==0.0.1
+gunicorn==19.3.0
+Pillow==5.3.0
+psycopg2==2.7.4
+python-dateutil==2.4.2
+six==1.9.0
+sqlparse==0.1.16
+static3==0.6.1
+whitenoise==2.0.6

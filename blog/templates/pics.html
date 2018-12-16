@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load trans from i18n %}
+{% load staticfiles %}
+
+{% load instagram_client %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/material-photo-gallery.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row-fluid content-wrapper">
+        <div class="top-img">
+            {% if static_file.pics_image %}
+            <img src="{{ static_file.pics_image.url }}"></img>
+            {% endif %}
+        </div>
+        <div class="pics">
+            <a href="http://instagram.com/eimsto" target="_blank"><p>http://instagram.com/eimsto</p></a>
+            {# Instagram feed #}
+            <div class="m-p-g">
+                <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">
+                    {% instagram_recent_media count=1000 %}
+                    {% for media in recent_media %}
+                    <img src="{{ media|standard_size }}" data-full="{{ media|standard_size }}" class="m-p-g__thumbs-img" />
+                    {% endfor %}
+                </div>
+                <div class="m-p-g__fullscreen"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'js/material-photo-gallery.js' %}"></script>
+{% endblock %}
