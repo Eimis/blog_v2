@@ -1,5 +1,6 @@
-from django.conf.urls import include, url, patterns
+from django.urls import path
 from django.conf import settings
+from django.conf.urls import static
 from django.contrib import admin
 
 from blog.views import code
@@ -14,23 +15,15 @@ from blog.views import pics
 
 urlpatterns = [
     # TODO: redirect:
-    url(r'^$', hello, name='hello'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', hello, name='hello'),
-    url(r'^code/$', code, name='code'),
-    # url(r'^code/(?P<slug>[\w-]+)/$$', code_thought, name='code_thought'),
-    url(r'^thoughts/$', thoughts, name='thoughts'),
-    url(r'^thoughts/(?P<slug>[\w-]+)/$', thought, name='thought'),
-    url(r'^sounds/$', sounds, name='sounds'),
-    url(r'^pics/$', pics, name='pics'),
-    url(r'^contact/$', contact, name='contact'),
-]
+    path(r'', hello, name='hello'),
+    path('admin/', admin.site.urls),
+    path('hello/', hello, name='hello'),
+    path('code/', code, name='code'),
+    # path('code/(?P<slug>[\w-]+)/', code_thought, name='code_thought'),
+    path('thoughts/', thoughts, name='thoughts'),
+    path('thoughts/(?P<slug>[\w-]+)/', thought, name='thought'),
+    path('sounds/', sounds, name='sounds'),
+    path('pics/', pics, name='pics'),
+    path('contact/', contact, name='contact'),
 
-if settings.DEBUG:
-    # static files (images, css, javascript, etc.)
-    urlpatterns += patterns(
-        '',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT
-        })
-    )
+] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
